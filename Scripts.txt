@@ -1,0 +1,74 @@
+CREATE TABLE `student`.`courses` (
+  `C_ID` INT NOT NULL,
+  `C_NAME` VARCHAR(45) NULL,
+  PRIMARY KEY (`C_ID`));
+
+
+CREATE TABLE `student`.`student_reg` (
+  `S_ID` INT NOT NULL,
+  `FIRST_NAME` VARCHAR(45) NOT NULL,
+  `LAST_NAME` VARCHAR(45) NOT NULL,
+  `AGE` INT NOT NULL,
+  `DOB` VARCHAR(10) NOT NULL,
+  `EMAIL` VARCHAR(45) NOT NULL,
+  `PWD` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`S_ID`));
+
+
+CREATE TABLE `student`.`messages` (
+  `M_ID` INT NOT NULL,
+  `S_ID` INT NOT NULL,
+  `R_ID` INT NOT NULL,
+  `MESSAGE` VARCHAR(255) NULL,
+  `FLAG` VARCHAR(1) NOT NULL,
+  `R_DATE` DATETIME NOT NULL,
+  PRIMARY KEY (`M_ID`));
+
+
+CREATE TABLE `student`.`teacher_courses_enrolled` (
+  `ENROLL_ID` INT NOT NULL,
+  `TEACHER_ID` INT NOT NULL,
+  `COURSE_ID` INT NOT NULL,
+  `CREATED_DATE` DATETIME NOT NULL,
+  PRIMARY KEY (`ENROLL_ID`));
+  
+  CREATE TABLE `student`.`student_courses_enrolled` (
+  `ENROLL_ID` INT NOT NULL,
+  `STUDENT_ID` INT NOT NULL,
+  `COURSE_ID` INT NOT NULL,
+  `CREATED_DATE` DATETIME NOT NULL,
+  PRIMARY KEY (`ENROLL_ID`));
+
+
+CREATE TABLE `student`.`teacher_reg` (
+  `TEACHER_ID` INT NOT NULL,
+  `FIRST_NAME` VARCHAR(45) NOT NULL,
+  `LAST_NAME` VARCHAR(45) NOT NULL,
+  `AGE` INT NOT NULL,
+  `DOB` VARCHAR(10) NOT NULL,
+  `EMAIL` VARCHAR(45) NOT NULL,
+  `PWD` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`TEACHER_ID`));
+
+
+CREATE TABLE `student`.`principal_reg` (
+  `PRINCIPAL_ID` INT NOT NULL,
+  `FIRST_NAME` VARCHAR(45) NOT NULL,
+  `LAST_NAME` VARCHAR(45) NOT NULL,
+  `AGE` INT NOT NULL,
+  `DOB` VARCHAR(10) NOT NULL,
+  `EMAIL` VARCHAR(45) NOT NULL,
+  `PWD` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`PRINCIPAL_ID`));
+
+
+
+INSERT INTO `student`.`teacher_reg` (`TEACHER_ID`, `FIRST_NAME`, `LAST_NAME`, `AGE`, `EMAIL`, `PWD`) VALUES ('1', 'Raju', 'A', '30', 'raju@gmail.com', 'raju');
+INSERT INTO `student`.`principal_reg` (`PRINCIPAL_ID`, `FIRST_NAME`, `LAST_NAME`, `AGE`, `EMAIL`, `PWD`) VALUES ('1', 'Principal', 'Admin', '50', 'principal@gmail.com', '12345');
+INSERT INTO `student`.`courses` (`C_ID`, `C_NAME`) VALUES ('1', 'MBA');
+INSERT INTO `student`.`courses` (`C_ID`, `C_NAME`) VALUES ('2', 'MCA');
+INSERT INTO `student`.`courses` (`C_ID`, `C_NAME`) VALUES ('3', 'BSC');
+INSERT INTO `student`.`courses` (`C_ID`, `C_NAME`) VALUES ('4', 'BZC');
+INSERT INTO `student`.`courses` (`C_ID`, `C_NAME`) VALUES ('5', 'MSC');
+INSERT INTO `student`.`messages` (`M_ID`, `S_ID`, `R_ID`, `MESSAGE`, `FLAG`, `R_DATE`) VALUES ('1', '10', '1', 'HELLO', 'N', '13-11-2022');
+

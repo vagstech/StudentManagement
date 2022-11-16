@@ -1,0 +1,31 @@
+.footer{
+  text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgb(64, 164, 235);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height:6.5%;
+    
+    
+  }
+
+  .sliderimg{
+    margin-top: 1rem;
+    width: 80%;
+    height: 400px;
+    object-fit: cover
+  }
+
+  .logoImg{
+    margin-top: .5rem;
+    width: 9%;
+    height:5%;
+  }
+
+  .flex-box {
+    display: flex;
+    flex-direction: row;
+  }
